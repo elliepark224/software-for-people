@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    /* Basic gallery container styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+  grid-gap: 10px; /* Space between items */
+  grid-auto-flow: dense; /* Ensures the grid fills gaps automatically */
+  margin: 20px;
+}
+
+/* Gallery item styling */
+.gallery-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Images maintain their original aspect ratio */
+.gallery-item img {
+  width: 100%;
+  height: auto; /* Maintain original height based on width */
+}
+
+/* Portrait and landscape items adjust based on aspect ratio */
+.portrait img {
+  max-height: 300px; /* Portrait images have a taller height */
+  width: auto;
+}
+
+.landscape img {
+  width: 100%; /* Landscape images stretch horizontally */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Make the gallery responsive */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div class="gallery">
+      <div class="gallery-item portrait"><img src="portrait.jpg" alt="Portrait Image 1"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 1"></div>
+      <div class="gallery-item portrait"><img src="portrait.jpg" alt="Portrait Image 2"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 2"></div>
+      <div class="gallery-item portrait"><img src="portrait.jpg" alt="Portrait Image 3"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 3"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 2"></div>
+      <div class="gallery-item portrait"><img src="portrait.jpg" alt="Portrait Image 3"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 3"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 2"></div>
+      <div class="gallery-item portrait"><img src="portrait.jpg" alt="Portrait Image 3"></div>
+      <div class="gallery-item landscape"><img src="landscape.jpg" alt="Landscape Image 3"></div>
+    </div>    
+  </body>
+</html>

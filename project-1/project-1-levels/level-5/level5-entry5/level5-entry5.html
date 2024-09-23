@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Image Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* Center the images horizontally */
+            align-items: flex-start; /* Align images at the top */
+            flex-wrap: wrap; /* Allow images to wrap to the next line */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add padding around the container */
+        }
+
+        img {
+            max-width: 100%; /* Ensures image doesn't exceed the container's width */
+            max-height: 500px; /* Adjust this value as needed */
+            height: auto; /* Maintains aspect ratio */
+            width: auto; /* Maintains aspect ratio */
+            margin: 10px; /* Adds spacing between images */
+        }
+    </style>
+</head>
+<body>
+    <img src="barbie.png" alt="Barbie Image">
+    <img src="dadcoco.png" alt="Dad Coco Image">
+    <img src="coco.png" alt="Coco Image">
+</body>
+</html>

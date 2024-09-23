@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Photo Gallery</title>
+    <style>
+        body {
+            font-family: "Georgia";
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .flex-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            width: 300px;
+        }
+
+        .flex-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .flex-item p {
+            text-align: center;
+            font-size: 16px;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center; 
+        }
+        
+        p {
+            text-align: center; 
+        }
+        .video-container {
+            text-align: center;
+        }
+        header {
+            background-color: pink;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            position: sticky;  /* Not fixed so it scrolls with the page */
+            width: 100%;
+            top: 0;
+        }
+        header img {
+            max-width: 10%;
+            height: auto;
+        }
+        .cover {
+            background-color: #f8d7da;
+            padding: 50px;
+            margin-top: -50px;  /* Optional for overlap effect */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="YDN_Nameplate_BigClear.png" alt="Header Image">
+    </header>
+<h1>
+  The News' Coverage of Spring Protests
+</h1>
+<h2>The News compiled coveraged of protests and encampments from last spring.</h2>
+<p>Even more context would go here. The Yale Daily News staff compiled photos and reported content from last spring. Scroll through articles to see what is there.</p>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Rd1uU-tb9fw?si=DjJ6WvHJfV1f9i_e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+        <div class="flex-container">
+        <!-- Flex item 1 -->
+        <div class="flex-item">
+            <img src="image1.jpg" alt="Image 1">
+            <p>Caption for Image 1</p>
+        </div>
+
+        <!-- Flex item 2 -->
+        <div class="flex-item">
+            <img src="image2.jpg" alt="Image 2">
+            <p>Caption for Image 2</p>
+        </div>
+
+        <!-- Flex item 3 -->
+        <div class="flex-item">
+            <img src="image3.jpg" alt="Image 3">
+            <p>Caption for Image 3</p>
+        </div>
+
+        <!-- Flex item 4 -->
+        <div class="flex-item">
+            <img src="image4.jpg" alt="Image 4">
+            <p>Caption for Image 4</p>
+        </div>
+
+        <!-- Flex item 5 -->
+        <div class="flex-item">
+          <img src="image5.jpg" alt="Image 4">
+          <p>Caption for Image 5</p>
+      </div>
+
+      <!-- Flex item 1 -->
+      <div class="flex-item">
+        <img src="image1.jpg" alt="Image 1">
+        <p>Caption for Image 1</p>
+      </div>
+
+      <!-- Flex item 2 -->
+      <div class="flex-item">
+        <img src="image2.jpg" alt="Image 2">
+        <p>Caption for Image 2</p>
+      </div>
+
+      <!-- Flex item 3 -->
+      <div class="flex-item">
+        <img src="image3.jpg" alt="Image 3">
+        <p>Caption for Image 3</p>
+       </div>
+
+      <!-- Flex item 4 -->
+      <div class="flex-item">
+        <img src="image4.jpg" alt="Image 4">
+        <p>Caption for Image 4</p>
+      </div>
+
+      <!-- Flex item 5 -->
+     <div class="flex-item">
+      <img src="image5.jpg" alt="Image 4">
+      <p>Caption for Image 5</p>
+    </div>
+
+        <!-- Add more flex items as needed -->
+    </div>
+
+</body>
+</html>

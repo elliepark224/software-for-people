@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .photo-grid {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+        }
+
+        h1 {
+          margin: 0 auto;
+        }
+        
+        h2 {
+          margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+  <h1>
+    &#11088; &#11088; &#11088; &#11088; level 5 entry 3 &#11088; &#11088; &#11088; &#11088;
+  </h1>
+  <h2>
+    for this one i used css grid
+  </h2>
+    <div class="photo-grid">
+        <img src="image1.jpg" alt="Photo 1">
+        <img src="image2.jpg" alt="Photo 2">
+        <img src="image3.jpg" alt="Photo 3">
+        <img src="image4.jpg" alt="Photo 4">
+        <img src="image5.jpg" alt="Photo 5">
+        <img src="image1.jpg" alt="Photo 1">
+        <img src="image2.jpg" alt="Photo 2">
+        <img src="image3.jpg" alt="Photo 3">
+        <img src="image4.jpg" alt="Photo 4">
+        <img src="image5.jpg" alt="Photo 5">
+        <img src="image1.jpg" alt="Photo 1">
+        <img src="image2.jpg" alt="Photo 2">
+        <img src="image3.jpg" alt="Photo 3">
+        <img src="image4.jpg" alt="Photo 4">
+        <img src="image5.jpg" alt="Photo 5">
+    </div>
+</body>
+</html>
