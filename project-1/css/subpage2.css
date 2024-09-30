@@ -1,0 +1,28 @@
+/* Style for the navbar */
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 0px 0;
+  display: flex;
+  justify-content: space-between; /* Align left and right sections */
+  align-items: center;
+}
+
+/* Style for the link containers (left and right) */
+.nav-left, .nav-right {
+  display: flex;
+}
+
+/* Style for the links in the navbar */
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: pink;
+}

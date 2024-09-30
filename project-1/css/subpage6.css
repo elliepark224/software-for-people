@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-family: "Comic Sans MS";
+  color: white;
+}
+
+p {
+  text-align: left;
+  margin-bottom: 20px;
+  font-family: "Comic Sans MS";
+  color: white;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Ensures images are centered */
+  align-items: center; /* Vertically centers images within their line */
+  flex-wrap: wrap; /* Allows images to wrap onto the next line */
+  gap: 0px; /* Adds space between images (alternative to margin on images) */
+  max-width: 100%; /* Ensures the container doesn't exceed the width of the viewport */
+  margin: 0 auto; /* Centers the container horizontally */
+}
+
+img {
+  max-width: 100%; /* Ensures image doesn't exceed the container's width */
+  max-height: 100px; /* Adjust this value as needed */
+  height: auto; /* Maintains aspect ratio */
+  width: auto; /* Maintains aspect ratio */
+  margin: 10px; /* Adds spacing between images */
+}
+
+img {
+  transition: filter .5s ease-in-out;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(0);
+}
+
+img:hover {
+  filter: none;
+  -webkit-filter: grayscale(100%);
+}

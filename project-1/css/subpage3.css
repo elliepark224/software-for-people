@@ -1,0 +1,27 @@
+.red-text {
+  color: red;
+}
+.blue-text {
+  color: blue;
+}
+
+.underline-on-hover {
+  text-decoration: none;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline;
+}
+
+img {
+  transition: filter .5s ease-in-out;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(0);
+}
+
+img:hover {
+  filter: none;
+  -webkit-filter: grayscale(100%);
+}

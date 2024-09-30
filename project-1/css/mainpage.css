@@ -1,0 +1,45 @@
+img {
+  max-width: 100%; /* Ensures image doesn't exceed the container's width */
+  max-height: 300px; /* Adjust this value as needed */
+  height: auto; /* Maintains aspect ratio */
+  width: auto; /* Maintains aspect ratio */
+  margin: 10px; /* Adds spacing between images */
+}
+
+/* Navbar styles */
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Flexbox for navbar alignment */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
