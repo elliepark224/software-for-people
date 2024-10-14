@@ -1,0 +1,8 @@
+body {
+  font-family: Helvetica;
+  cursor: url('wateringcan.png'), auto;
+}
+
+div {
+    display:inline-block;
+}

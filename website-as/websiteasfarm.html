@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Website as farm</title>
+  <link rel="stylesheet" href="websiteasfarm.css">
+</head>
+<body>
+    <h1>Website as farm!</h1>
+    <p>Websites are like farms... you need to take care of them for them to grow! <br>Click on a plot to water it, and see the farm grow!</p>
+    <script>
+      // define your "batch of images" in an array
+     var images = [
+              "<img src='Crop_north-west_of_Kilkenny_Farm_-_geograph.org.uk_-_4696205.jpg'>",
+              "<img src='Maize_crop_at_Sunnybank_Farm_-_geograph.org.uk_-_5043067.jpg'>",
+              "<img src='Rape_crop_near_Vale_Farm_north_of_Ryhall_-_geograph.org.uk_-_4473260.jpg'>",
+          ]
+
+     // this function randomly picks an image from the batch
+function random_image() {
+    return Math.floor(Math.random() * images.length);
+}
+
+// this function adds the randomly-selected image to the page
+function add_image() {
+
+    // first you make a new div for the image.
+    var new_image = document.createElement('div');
+
+    // then you set the div's inner-HTML, i.e., its content, to the chosen img tag
+    new_image.innerHTML = images[random_image()];
+
+    // Set a fixed size for the image (square dimensions)
+    var fixed_size = "200px"; // You can adjust this value
+
+    // Assign the fixed width and height to make it a square
+    new_image.style.width = fixed_size;
+    new_image.style.height = fixed_size;
+    new_image.style.display = 'inline-block';
+
+    // Use CSS to ensure the image inside the div is cropped to fit the square
+    new_image.style.overflow = "hidden"; // To ensure it crops anything outside the square
+
+    // Ensure the img tag inside the div fits the square by using object-fit CSS property
+    var img_tag = new_image.querySelector('img');
+    new_image.querySelector('img').style.width = "100%";
+    new_image.querySelector('img').style.height = "100%";
+    new_image.querySelector('img').style.objectFit = "cover"; // Ensures image is cropped to fill the square
+
+    // add the new image to the document's body (so it's visible!)
+    document.getElementById('image-container').append(new_image);
+
+    // last step! set up the click. 
+    // You want your image to 'listen' for clicks. When it's clicked, it adds a new image.
+    new_image.addEventListener('click', add_image);
+}
+
+// so that the first image appears when the page loads, run the function once.
+add_image();
+  </script>
+</body>
+</html>
