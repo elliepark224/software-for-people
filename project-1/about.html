@@ -5,25 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/itemstyles.css">
+    <style>
+      * {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: black;
+  height: 100%;
+  font-family: 'Arial Narrow', Arial, sans-serif, sans-serif;
+  color: white
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px; /* Add some padding for space around the photo */
+}
+
+img {
+  max-height: 50vh;
+  max-width: 80vw;
+  display: block;
+  margin: auto;
+  object-fit: contain; /* Ensure the image is contained within the container without being stretched */
+}
+
+.text-box {
+  text-align: center; /* Centers text within the div */
+  margin: 10px 0;    /* Adds vertical margin */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Changes link color to white */
+}
+
+a:hover {
+  color:yellow;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: yellow;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.prev {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.next {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+</style>
 </head>
+
 <body>
   <div class="text-box">
     <h1>
       About this site
     </h1>
     <div class=".photo-container">
-      <img src="images/agenda.png">
+      <img src="images/favicon.ico">
     </div>
     <p>
       This is your text content. It will have the same width as the image above. You can place any content you want here, including paragraphs, links, or additional styling.
     </p>
+    <p>
+      <br><a href="home.html">Return to home - or rather, to the items I will remember it by...</a>
+    </p>
   </div>
-  <nav>
-    <div class="nav-left">
-      <a href="home.html">home</a>
-      <a href="about.html">about</a>
-    </div>
-  </nav>
 </body>
 </html>

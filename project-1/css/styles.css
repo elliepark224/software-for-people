@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     color: white;
 }
 
@@ -74,7 +74,7 @@ img {
 
 /* Hover effects */
 img:hover {
-    filter: none;
+    filter: sepia(100%) hue-rotate(10deg) saturate(300%);
     animation: none; /* Stop flickering */
     transform: scale(1.5); /* Scale up the image on hover */
     transition: transform 0.3s ease, filter 0.3s ease;
