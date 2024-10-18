@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.floating-images {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+/* Apply styles to images inside <a> tags */
+img {
+    max-width: 100px; /* Limit max width */
+    max-height: 100px; /* Limit max height */
+    width: auto; /* Preserve aspect ratio */
+    height: auto; /* Preserve aspect ratio */
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for scaling and filtering */
+}
+
+/* Animation to make the images float around randomly */
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(calc(-50vw + 100px), calc(-50vh + 100px)); /* Move to random position */
+    }
+    100% {
+        transform: translate(calc(50vw - 100px), calc(50vh - 100px)); /* Move to random position */
+    }
+}
+
+.float {
+    animation: float 20s ease-in-out infinite alternate;
+    animation-duration: calc(10s + (5 * var(--i))); /* Randomized duration */
+}
+
+/* Smooth ambient twinkling effect */
+@keyframes smooth-twinkle {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+}
+
+.twinkle {
+    animation: smooth-twinkle 3s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 1s); /* Randomized delay to stagger twinkling */
+}
+
+/* Hover effects */
+img:hover {
+    filter: none;
+    animation: none; /* Stop flickering */
+    transform: scale(1.5); /* Scale up the image on hover */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Randomize the duration of the floating animation for each anchor <a> */
+a:nth-child(1) {
+    --i: 1;
+    top: 10%;
+    left: 10%;
+}
+
+a:nth-child(2) {
+    --i: 2;
+    top: 50%;
+    left: 40%;
+}
+
+a:nth-child(3) {
+    --i: 3;
+    top: 70%;
+    left: 20%;
+}
+
+a:nth-child(4) {
+    --i: 4;
+    top: 50%;
+    left: 85%;
+}
+
+a:nth-child(5) {
+    --i: 5;
+    top: 70%;
+    left: 60%;
+}
+
+a:nth-child(6) {
+    --i: 6;
+    top: 30%;
+    left: 20%;
+}
+
+a:nth-child(7) {
+    --i: 7;
+    top: 60%;
+    left: 10%;
+}
+
+a:nth-child(8) {
+    --i: 8;
+    top: 10%;
+    left: 60%;
+}
+
+a:nth-child(9) {
+    --i: 9;
+    top: 40%;
+    left: 65%;
+}
+
+a:nth-child(10) {
+    --i: 10;
+    top: 20%;
+    left: 70%;
+}
+
+a:nth-child(11) {
+    --i: 11;
+    top: 5%;
+    left: 30%;
+}
+
+a:nth-child(12) {
+    --i: 12;
+    top: 30%;
+    left: 50%;
+}
+
+a:nth-child(13) {
+    --i: 13;
+    top: 70%;
+    left: 35%;
+}
+
+a:nth-child(14) {
+    --i: 14;
+    top: 20%;
+    left: 90%;
+}
+
+a:nth-child(15) {
+    --i: 15;
+    top: 75%;
+    left: 80%;
+}

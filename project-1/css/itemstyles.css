@@ -1,0 +1,127 @@
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: black;
+  height: 100%;
+  font-family: 'Arial Narrow', Arial, sans-serif, sans-serif;
+  color: white
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px; /* Add some padding for space around the photo */
+}
+
+img {
+  max-height: 50vh;
+  max-width: 80vw;
+  display: block;
+  margin: auto;
+  object-fit: contain; /* Ensure the image is contained within the container without being stretched */
+}
+
+.text-box {
+  text-align: center; /* Centers text within the div */
+  margin: 10px 0;    /* Adds vertical margin */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: yellow;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.prev {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.next {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Navbar styles */
+nav {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  font-family: "Arial Narrow";
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* Flexbox for navbar alignment */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Define the animation for Y-axis rotation */
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Apply the animation with 3D effect */
+.rotateY {
+  animation: rotateY 10s infinite linear;
+  transform-style: preserve-3d; /* Ensures 3D effect is maintained */
+}
