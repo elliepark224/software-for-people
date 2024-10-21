@@ -167,7 +167,7 @@ a:nth-child(14) {
 
 a:nth-child(15) {
     --i: 15;
-    top: 75%;
+    top: 20%;
     left: 80%;
 }
 
@@ -256,7 +256,7 @@ a:nth-child(15) {
     }
 
     a:nth-child(15) {
-        top: 40%;
+        top: 10%;
         left: 90%;
     }
 }
@@ -307,5 +307,39 @@ a:nth-child(15) {
     a:nth-child(8) {
         top: 80%;
         left: 75%;
+    }
+    a:nth-child(9) {
+        top: 20%;
+        left: 70%;
+    }
+
+    a:nth-child(10) {
+        top: 30%;
+        left: 40%;
+    }
+
+    a:nth-child(11) {
+        top: 50%;
+        left: 50%;
+    }
+
+    a:nth-child(12) {
+        top: 60%;
+        left: 30%;
+    }
+
+    a:nth-child(13) {
+        top: 70%;
+        left: 10%;
+    }
+
+    a:nth-child(14) {
+        top: 10%;
+        left: 60%;
+    }
+
+    a:nth-child(15) {
+        top: 25%;
+        left: 80%;
     }
 }

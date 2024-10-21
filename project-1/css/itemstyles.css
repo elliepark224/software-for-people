@@ -36,7 +36,9 @@ img {
 
 .text-box {
   text-align: center; /* Centers text within the div */
-  margin: 10px 0;    /* Adds vertical margin */
+  margin: 10px auto;    /* Adds vertical margin */
+  width: 100%;
+  max-width: 500 px;
 }
 
 .navigation {
@@ -98,16 +100,19 @@ nav a:hover {
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
+  background-color: transparent;
 }
 
 .nav-left {
   display: flex;
   justify-content: flex-start;
+  background-color: transparent;
 }
 
 .nav-right {
   display: flex;
   justify-content: flex-end;
+  background-color: transparent;
 }
 
 /* Define the animation for Y-axis rotation */
@@ -124,4 +129,10 @@ nav a:hover {
 .rotateY {
   animation: rotateY 10s infinite linear;
   transform-style: preserve-3d; /* Ensures 3D effect is maintained */
+}
+
+@media (min-width: 768px) {
+  .text-box {
+    width: 50%;
+  }
 }
