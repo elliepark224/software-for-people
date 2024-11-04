@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank News Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fake News Generator</h1>
+        <p>Create a fake news article about someone!</p>
+        
+        <form id="prankForm">
+            <label for="name">Subject of headline or prank:</label>
+            <input type="text" id="name" placeholder="e.g., Beyonce" required>
+
+            <label for="headline">Fake headline:</label>
+            <input type="text" id="headline" placeholder="e.g., set to headline Spring Fling" required>
+
+            <button type="button" onclick="generatePrank()">Generate fake YDN article!</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h2>Your Fake News Article Link:</h2>
+            <input type="text" id="prankLink" readonly>
+            <button onclick="copyLink()">Copy Link</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

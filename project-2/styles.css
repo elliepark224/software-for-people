@@ -1,0 +1,93 @@
+/* Reset basic styles for mobile */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comic Sans MS", sans-serif;
+  background-color: rgb(0, 0, 189);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px; /* Add padding for breathing room on mobile */
+}
+
+.container {
+  background: rgb(223, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Restrict width for better readability on small screens */
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 1.5em; /* Slightly larger heading on mobile */
+  margin-bottom: 15px;
+}
+
+p {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+input[type="text"] {
+  width: 100%; /* Full width on mobile */
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+button {
+  background-color: yellowgreen;
+  color: white;
+  font-family: "Comic Sans MS", sans-serif;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: rgb(129, 173, 41);
+}
+
+#result {
+  margin-top: 20px;
+}
+
+#prankLink {
+  width: 100%; /* Full width for link display */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* Styles for larger screens */
+@media (min-width: 600px) {
+  .container {
+      max-width: 400px; /* Slightly wider container on larger screens */
+  }
+
+  h1 {
+      font-size: 1.75em;
+  }
+
+  p, input[type="text"], button, #prankLink {
+      font-size: 1.1em;
+  }
+}

@@ -1,0 +1,28 @@
+.xl-type {
+  font-size: 100px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Comic Sans MS", sans-serif;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+.container {
+  text-align: center;
+}
+.instructions {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 20px;
+}
+.display {
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s ease, font-size 0.2s ease;
+}
