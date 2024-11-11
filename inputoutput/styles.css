@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Arial Narrow", sans-serif;
+  margin-top: 20px;
+  transition: font-size 0.3s ease;
+  background-color: rgb(255, 211, 226);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+}
+img {
+  max-width: 1/5vh;
+  max-height: 500px;
+  transition: filter 0.3s ease, width 0.3s ease;
+}
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.slider {
+  width: 300px;
+  margin: 5px 0;
+}
+#downloadButton {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Arial Narrow", sans-serif;
+}
+#downloadButton:hover {
+  background-color: rgb(0, 0, 182);
+}

@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prank News Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fake News!</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+        input[type="text"] { padding: 10px; width: 80%; margin-top: 10px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        .output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        .link-box { margin-top: 10px; padding: 10px; background: #f7f7f7; }
+        .link-box input { width: 100%; padding: 8px; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fake News Generator</h1>
-        <p>Create a fake news article about someone!</p>
-        
-        <form id="prankForm">
-            <label for="name">Subject of headline or prank:</label>
-            <input type="text" id="name" placeholder="e.g., Beyonce" required>
-
-            <label for="headline">Fake headline:</label>
-            <input type="text" id="headline" placeholder="e.g., set to headline Spring Fling" required>
-
-            <button type="button" onclick="generatePrank()">Generate fake YDN article!</button>
-        </form>
-
-        <div id="result" style="display: none;">
-            <h2>Your Fake News Article Link:</h2>
-            <input type="text" id="prankLink" readonly>
-            <button onclick="copyLink()">Copy Link</button>
+        <div id="formContainer">
+            <h1>Create a fake article!</h1>
+            <form id="inputForm">
+                <input type="text" id="userInput" placeholder="Enter silly headline here" required>
+                <button type="submit">Generate article link</button>
+            </form>
+        </div>
+        <div class="output" id="outputDisplay" style="display: none;">
+            <h2>Here is your fake news article!</h2>
+            <p id="displayText"></p>
+            <div class="link-box" id="linkBox" style="display: none;">
+                <label for="shareLink">Shareable Link:</label>
+                <input type="text" id="shareLink" readonly>
+            </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

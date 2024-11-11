@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+
+  <h1>Photo Editor</h1>
+  <p>Upload a photo to edit with the sliders!</p>
+
+  <!-- File Upload -->
+  <input type="file" id="imageUpload" accept="image/*">
+
+  <!-- Image Container -->
+  <div class="container">
+    <img id="uploadedImage" alt="Your uploaded image will appear here" style="display:none;">
+  </div>
+
+  <!-- Sliders for Editing -->
+  <div class="slider-container">
+    <label for="sizeSlider">Size</label>
+    <input type="range" id="sizeSlider" class="slider" min="50" max="150" value="100">
+    
+    <label for="brightnessSlider">Brightness</label>
+    <input type="range" id="brightnessSlider" class="slider" min="0" max="200" value="100">
+
+    <label for="contrastSlider">Contrast</label>
+    <input type="range" id="contrastSlider" class="slider" min="0" max="200" value="100">
+
+    <label for="saturationSlider">Saturation</label>
+    <input type="range" id="saturationSlider" class="slider" min="0" max="200" value="100">
+
+    <label for="grayscaleSlider">Grayscale</label>
+    <input type="range" id="grayscaleSlider" class="slider" min="0" max="100" value="0">
+
+    <label for="blurSlider">Blur</label>
+    <input type="range" id="blurSlider" class="slider" min="0" max="10" value="0">
+
+    <label for="invertSlider">Invert</label>
+    <input type="range" id="invertSlider" class="slider" min="0" max="100" value="0">
+
+    <label for="opacitySlider">Opacity</label>
+    <input type="range" id="opacitySlider" class="slider" min="0" max="100" value="100">
+  </div>
+
+  <!-- Download Button -->
+  <button id="downloadButton" style="display:none;">Download Edited Image</button>
+
+  <script src="main.js"></script>
+</body>
+</html>

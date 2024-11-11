@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Content Display</title>
+    <style>
+        /* New style for the display page */
+        body { font-family: Georgia, serif; margin: 0; padding: 0; background-color: #f0f8ff; color: #333; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .content-container { text-align: center; padding: 20px; background: #fff; border: 2px solid #ddd; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); max-width: 600px; }
+        h1 { font-size: 2.5em; color: #333; }
+        p { font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>Your Submitted Content</h1>
+        <p id="displayText">Loading...</p>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the input from the URL and display it
+        document.addEventListener("DOMContentLoaded", () => {
+            const displayText = document.getElementById("displayText");
+            const userInput = getQueryParameter("input");
+
+            // If input exists, display it, otherwise show an error
+            if (userInput) {
+                displayText.textContent = decodeURIComponent(userInput);
+            } else {
+                displayText.textContent = "No content to display.";
+            }
+        });
+    </script>
+</body>
+</html>

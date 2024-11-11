@@ -1,0 +1,23 @@
+.red, .blue, .green {
+  width: 10em;
+  height: 8em;
+  display:inline-block;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: lime;
+}
+
+.blue {
+  background-color: blue;
+}
+
+a {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
