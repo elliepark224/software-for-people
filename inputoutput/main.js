@@ -50,11 +50,6 @@ function applyFilters() {
   uploadedImage.style.opacity = opacity / 100;
 }
 
-sizeSlider.addEventListener("input", function() {
-  const scale = sizeSlider.value;
-  uploadedImage.style.width = `${scale}%`;
-});
-
 // Add event listeners to all sliders
 Object.values(sliders).forEach((slider) => {
   slider.addEventListener("input", applyFilters);
