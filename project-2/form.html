@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Yale Daily News">
+    <meta property="og:description" content="This is not what you think it is.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yaledailynews.com/">
+    <title>Fake News!</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+        input[type="text"] { padding: 10px; width: 80%; margin-top: 10px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        .output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        .link-box { margin-top: 10px; padding: 10px; background: #f7f7f7; }
+        .link-box input { width: 100%; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="formContainer">
+            <h1>Create a fake article!</h1>
+            <form id="inputForm">
+                <input type="text" id="userInput" placeholder="Enter silly headline here" required>
+                <button type="submit">Generate article link</button>
+            </form>
+        </div>
+        <div class="output" id="outputDisplay" style="display: none;">
+            <p id="displayText"></p>
+            <div class="link-box" id="linkBox" style="display: none;">
+                <label for="shareLink">Shareable Link:</label>
+                <input type="text" id="shareLink" readonly>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Check if there's input in the URL and display it
+        document.addEventListener("DOMContentLoaded", () => {
+            const outputDisplay = document.getElementById("outputDisplay");
+            const displayText = document.getElementById("displayText");
+            const formContainer = document.getElementById("formContainer");
+            const linkBox = document.getElementById("linkBox");
+            const userInput = getQueryParameter("input");
+
+            // If URL has input parameter, display only the input content
+            if (userInput) {
+                displayText.textContent = decodeURIComponent(userInput);
+                outputDisplay.style.display = "block";
+                formContainer.style.display = "none"; // Hide the form
+                linkBox.style.display = "none";       // Hide the link box
+            }
+        });
+
+        // Handle form submission
+        document.getElementById("inputForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const input = document.getElementById("userInput").value;
+
+            // Update the display section with input
+            const displayText = document.getElementById("displayText");
+            displayText.textContent = input;
+
+            // Make the output section and link box visible, hide the form
+            const outputDisplay = document.getElementById("outputDisplay");
+            outputDisplay.style.display = "block";
+            const formContainer = document.getElementById("formContainer");
+            formContainer.style.display = "none";
+            const linkBox = document.getElementById("linkBox");
+            linkBox.style.display = "block";
+
+            // Generate shareable link with query parameter
+            const encodedInput = encodeURIComponent(input);
+            const shareableLink = `${window.location.origin}${window.location.pathname}?input=${encodedInput}`;
+            document.getElementById("shareLink").value = shareableLink;
+
+            // Update the URL without reloading
+            window.history.pushState({}, '', shareableLink);
+        });
+    </script>
+</body>
+</html>

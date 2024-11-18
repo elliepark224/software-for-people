@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News!</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+        input[type="text"] { padding: 10px; width: 80%; margin-top: 10px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        .output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        .link-box { margin-top: 10px; padding: 10px; background: #f7f7f7; }
+        .link-box input { width: 100%; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="formContainer">
+            <h1>Create a fake article!</h1>
+            <form id="previewForm">
+              <label for="imageURL">Image URL:</label>
+              <input type="url" id="imageURL" name="imageURL" required><br><br>
+              
+              <label for="previewText">Preview Text:</label>
+              <input type="text" id="previewText" name="previewText" required><br><br>
+              
+              <button type="button" onclick="generateLink()">Generate Link</button>
+            </form>
+        </div>
+        <div class="output" id="outputDisplay" style="display: none;">
+            <h2>Here is your fake news article!</h2>
+            <p id="displayText"></p>
+            <div class="link-box" id="linkBox" style="display: none;">
+                <label for="shareLink">Shareable Link:</label>
+                <input type="text" id="shareLink" readonly>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function generateLink() {
+        const imageUrl = document.getElementById("imageURL").value;
+        const previewText = document.getElementById("previewText").value;
+        const link = `/generatePreview?image=${encodeURIComponent(imageUrl)}&text=${encodeURIComponent(previewText)}`;
+        document.getElementById("generatedLink").innerHTML = `Your custom preview link: <a href="${link}" target="_blank">${link}</a>`;
+      }
+    </script>
+</body>
+</html>
