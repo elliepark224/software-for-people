@@ -60,6 +60,7 @@
             <h2>create a fake article!</h2>
             <form id="inputForm">
                 <input type="text" id="userInput" placeholder="Enter silly headline here" required>
+                <input type="url" id="userImage" placeholder="Enter silly image URL here" required>
                 <button type="submit">Generate article link</button>
             </form>
         </div>
@@ -103,12 +104,15 @@
         document.getElementById("inputForm").addEventListener("submit", (e) => {
             e.preventDefault();
             const input = document.getElementById("userInput").value;
+            const inputImage = document.getElementById("userImage").value;
 
             // Update the display section with input
             const displayText = document.getElementById("displayText");
             displayText.textContent = input;
-            const metaDescription = document.querySelector('meta[property="og:description"]');
-            metaDescription?.setAttribute ('content', input)
+            const metaTitle = document.querySelector('meta[property="og:title"]');
+            metaTitle?.setAttribute ('content', input)
+            const metaImage = document.querySelector('meta[property="og:image"]');
+            metaImage?.setAttribute ('content', inputImage)
 
             // Make the output section and link box visible, hide the form
             const outputDisplay = document.getElementById("outputDisplay");
