@@ -107,8 +107,8 @@
             // Update the display section with input
             const displayText = document.getElementById("displayText");
             displayText.textContent = input;
-            const metaDescription = document.querySelector('meta[name="og:description"]');
-            metaDescription.setAttribute ('content', input)
+            const metaDescription = document.querySelector('meta[property="og:description"]');
+            metaDescription?.setAttribute ('content', input)
 
             // Make the output section and link box visible, hide the form
             const outputDisplay = document.getElementById("outputDisplay");
