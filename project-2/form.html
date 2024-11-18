@@ -9,19 +9,53 @@
     <meta property="og:url" content="https://yaledailynews.com/">
     <title>Fake News!</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; text-align: center; }
-        input[type="text"] { padding: 10px; width: 80%; margin-top: 10px; }
-        button { padding: 10px 20px; margin-top: 10px; }
-        .output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
-        .link-box { margin-top: 10px; padding: 10px; background: #f7f7f7; }
-        .link-box input { width: 100%; padding: 8px; }
+        body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: yellow;
+        }
+        .container { max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        input[type="text"] { padding: 10px;
+          width: 80%;
+          margin-top: 10px;
+        }
+        button {
+          padding: 10px 20px;
+          margin-top: 10px;
+        }
+        .output { margin-top: 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          background-color: white;
+        }
+        .link-box {
+          margin-top: 10px;
+          padding: 10px;
+        }
+        .link-box input { width: 100%;
+          padding: 8px;
+        }
+        #displayText {
+        font-size: 1.5em;
+        font-weight: bold;
+        }
+        #staticText {
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 3em;
+        font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div id="formContainer">
-            <h1>Create a fake article!</h1>
+            <h1>time for me to prank someone...</h1>
+            <h2>create a fake article!</h2>
             <form id="inputForm">
                 <input type="text" id="userInput" placeholder="Enter silly headline here" required>
                 <button type="submit">Generate article link</button>
@@ -29,6 +63,7 @@
         </div>
         <div class="output" id="outputDisplay" style="display: none;">
             <p id="displayText"></p>
+            <p id="staticText" style="display: none;">girl does that make sense...<br>YOU GOT PRANKED!<br>stop believing everything i send u</p>
             <div class="link-box" id="linkBox" style="display: none;">
                 <label for="shareLink">Shareable Link:</label>
                 <input type="text" id="shareLink" readonly>
@@ -49,6 +84,7 @@
             const displayText = document.getElementById("displayText");
             const formContainer = document.getElementById("formContainer");
             const linkBox = document.getElementById("linkBox");
+            const staticText = document.getElementById("staticText");
             const userInput = getQueryParameter("input");
 
             // If URL has input parameter, display only the input content
@@ -57,6 +93,7 @@
                 outputDisplay.style.display = "block";
                 formContainer.style.display = "none"; // Hide the form
                 linkBox.style.display = "none";       // Hide the link box
+                staticText.style.display = "block";  // Show the static text
             }
         });
 
