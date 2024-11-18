@@ -7,6 +7,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFZG1e2jpHoda8JYl5hn2DN-XTqHIrr5H7SA&s" />
     <meta property="og:url" content="https://yaledailynews.com/">
+    <meta property="og:description" content="this is the description">
     <meta property="og:site-name" content="Yale Daily News Publishing Co.">
     <title>Fake News!</title>
     <style>
@@ -106,6 +107,8 @@
             // Update the display section with input
             const displayText = document.getElementById("displayText");
             displayText.textContent = input;
+            const metaDescription = document.querySelector('meta[name="og:description"]');
+            metaDescription.setAttribute ('content', input)
 
             // Make the output section and link box visible, hide the form
             const outputDisplay = document.getElementById("outputDisplay");
