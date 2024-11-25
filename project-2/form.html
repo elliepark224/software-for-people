@@ -3,39 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Yale Daily News" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFZG1e2jpHoda8JYl5hn2DN-XTqHIrr5H7SA&s"
-    />
-    <meta property="og:url" content="https://yaledailynews.com/" />
-    <meta property="og:description" content="this is the description" />
-    <meta property="og:site-name" content="Yale Daily News Publishing Co." />
-    <title>Fake News!</title>
+    <title>Prank Link Generator</title>
     <style>
       body {
         font-family: "Helvetica", "Arial", sans-serif;
         margin: 0;
         padding: 20px;
-        background-color: yellow;
+        background-color: blue;
+        color: white
       }
       [hidden] {
         display: none;
       }
       .container {
-        max-width: 600px;
+        max-width: 90%;
         margin: 0 auto;
         text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack items vertically on mobile */
       }
       input[type="text"] {
         padding: 10px;
-        width: 80%;
-        margin-top: 10px;
+        width: 100%;
+        margin: 10px;
+        line-height: 1.5;
+        max-width: 500px; /* Limit the maximum width for better responsiveness */
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      input[type="url"] {
+        padding: 10px;
+        width: 100%;
+        margin: 10px;
+        line-height: 1.5;
+        max-width: 500px; /* Limit the maximum width for better responsiveness */
+        font-size: 1rem;
+        box-sizing: border-box;
       }
       button {
-        padding: 10px 20px;
-        margin-top: 10px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 1rem;
       }
       .output {
         margin-top: 20px;
@@ -46,10 +54,16 @@
       .link-box {
         margin-top: 10px;
         padding: 10px;
+        text-align: center;
+        display: flex; /* Use flexbox for centering */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Horizontally center content */
+        justify-content: center; /* Vertically center content */
+        box-sizing: border-box; /* Ensure consistent padding/width */
       }
       .link-box input {
         width: 100%;
-        padding: 8px;
+        padding: 10px;
       }
       #displayText {
         font-size: 1.5em;
@@ -60,14 +74,20 @@
         font-size: 3em;
         font-weight: bold;
       }
-      
+      h1 {
+        font-family: "Arial Black", sans-serif;
+        
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div id="formContainer">
-        <h1>time for me to prank someone...</h1>
-        <h2>create a fake article!</h2>
+        <h1>TIME TO PRANK SOMEONE!</h1>
+        <h2>Create a fake article!</h2>
+        <p>
+          Type a headline and image below, and the site will generate a link with the input content embeded in the metadata. When you text the generated link to a friend through iMessage, the input text and image will appear as the preview.
+        </p>
         <form id="inputForm">
           <input
             name="headline"
@@ -76,24 +96,28 @@
             placeholder="Enter silly headline here"
             required
           />
-          <input
+          <br><input
             name="image-link"
             type="url"
             id="userImage"
             placeholder="Enter silly image URL here"
             required
           />
-          <button type="submit">Generate article link</button>
+          <br><button type="submit">Generate article link</button>
         </form>
+        <p>
+          Example fake links to send someone:
+        </p>
       </div>
 
       <div class="output" id="outputDisplay" hidden>
         <div class="link-box" id="linkBox">
           <label for="shareLink">Shareable Link:</label>
           <input type="text" id="shareLink" readonly />
+          <button class="copy-btn" id="copyButton">Copy Link</button>
         </div>
       </div>
-
+      
     </div>
 
     <script>
@@ -117,6 +141,14 @@
             console.error("Error:", error);
           });
       }
+      
+      // Function to copy text to clipboard
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(
+          () => alert("Link copied to clipboard!"),
+          (err) => alert("Failed to copy the link.")
+        );
+      }
 
       // Function to get query parameters from the URL
       function getQueryParameter(name) {
@@ -132,7 +164,6 @@
         const linkBox = document.getElementById("linkBox");
         const staticText = document.getElementById("staticText");
         const userInput = getQueryParameter("input");
-
 
         // If URL has input parameter, display only the input content
         if (userInput) {
@@ -178,8 +209,11 @@
         // Generate shareable link with query parameter
         const shareableLink = `https://ellie-dailies.glitch.me/${uniqueID}`;
         document.getElementById("shareLink").value = shareableLink;
+        
+        document.getElementById("copyButton").addEventListener("click", () => {
+          copyToClipboard(shareableLink);
+        });
       });
-   
-   </script>
+    </script>
   </body>
-</html>
+  </html>
