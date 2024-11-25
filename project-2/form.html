@@ -59,36 +59,57 @@
             <h1>time for me to prank someone...</h1>
             <h2>create a fake article!</h2>
             <form id="inputForm">
-                <input type="text" id="userInput" placeholder="Enter silly headline here" required>
-                <input type="url" id="userImage" placeholder="Enter silly image URL here" required>
+                <input name="headline" type="text" id="userInput" placeholder="Enter silly headline here" required>
+                <input name="image-link" type="url" id="userImage" placeholder="Enter silly image URL here" required>
                 <button type="submit">Generate article link</button>
             </form>
         </div>
-        <div class="output" id="outputDisplay" style="display: none;">
-            <p id="displayText"></p>
-            <p id="staticText" style="display: none;">girl does that make sense...<br>YOU GOT PRANKED!<br>stop believing everything i send u<br><a href="https://www.wikihow.com/Not-Be-Gullible" WikiHow: How Not to Be Gullible></a></p>
-            <div class="link-box" id="linkBox" style="display: none;">
-                <label for="shareLink">Shareable Link:</label>
-                <input type="text" id="shareLink" readonly>
-            </div>
-        </div>
+        
     </div>
 
     <script>
-        // Function to get query parameters from the URL
+        const api = "https://script.google.com/macros/s/AKfycbwVvLuZJMxXXoJY4565wNLzpbH39x7imG9FhNzTX1X83nE3tuIaTQnkF3v23aWC2VkC/exec"
+
+  
+        // Function to post form data to google sheet
+        function handlePostData(data) {
+            const formData = new FormData();
+            for (const key in data) {
+                formData.append(key, data[key]);
+            }
+            fetch(api, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+        }
+           
+
+              // Function to get query parameters from the URL
         function getQueryParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
+      
+        
 
         // Check if there's input in the URL and display it
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             const outputDisplay = document.getElementById("outputDisplay");
             const displayText = document.getElementById("displayText");
             const formContainer = document.getElementById("formContainer");
             const linkBox = document.getElementById("linkBox");
             const staticText = document.getElementById("staticText");
             const userInput = getQueryParameter("input");
+
+
+
 
             // If URL has input parameter, display only the input content
             if (userInput) {
@@ -105,6 +126,12 @@
             e.preventDefault();
             const input = document.getElementById("userInput").value;
             const inputImage = document.getElementById("userImage").value;
+
+            // If input is empty, do nothing
+            if (!input || !inputImage)      return;
+
+            // Post the input data to the server
+            handlePostData({ headline: input, "image-link": inputImage });
 
             // Update the display section with input
             const displayText = document.getElementById("displayText");
@@ -124,12 +151,13 @@
 
             // Generate shareable link with query parameter
             const encodedInput = encodeURIComponent(input);
-            const shareableLink = `${window.location.origin}${window.location.pathname}?input=${encodedInput}`;
+            const shareableLink = `https://elliepark224.github.io/software-for-people/project-2/form.html${encodedInput}`;
             document.getElementById("shareLink").value = shareableLink;
 
             // Update the URL without reloading
             window.history.pushState({}, '', shareableLink);
         });
+
     </script>
 </body>
 </html>
