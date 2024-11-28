@@ -86,6 +86,9 @@
       display: block;
       object-fit: contain;
       }
+      #moreText {
+        text-align: left;
+      }
       
     </style>
   </head>
@@ -116,9 +119,14 @@
           <br><button type="submit">Generate link!</button>
         </form>
         <span id="moreText" style="display:none;">
-          This is the hidden text that will be revealed when the "Read More" button is clicked.
+          <h2>Step by Step Walkthrough</h2>
+          <ol>
+            <li><b>Come up with prank idea</b> (e.g. JoJo Siwa is coming to campus for a seminar.)</li>
+            <li><b>Enter a headline and relevant image address</b>(e.g. Yale is next on JoJo Siwa's Ivy tour)</li>
+            <li><b>Click generate, copy link, and send to a friend</b></li>
+          </ol>
         </span>
-        <br><button id="readMoreBtn" onclick="toggleText()">Read More</button>
+        <br><button id="readMoreBtn" onclick="toggleText()">Show Walkthrough</button>
 
       </div>
 
