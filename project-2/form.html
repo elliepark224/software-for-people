@@ -6,7 +6,7 @@
     <title>Prank Link Generator</title>
     <style>
       body {
-        font-family: "Helvetica", "Arial", sans-serif;
+        font-family: "Arial", sans-serif;
         margin: 0;
         padding: 20px;
         background-color: blue;
@@ -75,18 +75,28 @@
         font-weight: bold;
       }
       h1 {
-        font-family: "Arial Black", sans-serif;
-        
+        font-weight: bold
       }
+      label{
+        color: black
+      }
+      img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      }
+      
     </style>
   </head>
   <body>
     <div class="container">
       <div id="formContainer">
         <h1>TIME TO PRANK SOMEONE!</h1>
+        <img src="sketch.gif">
         <h2>Create a fake article!</h2>
         <p>
-          Type a headline and image below, and the site will generate a link with the input content embeded in the metadata. When you text the generated link to a friend through iMessage, the input text and image will appear as the preview.
+          Enter a headline and image below to generate a link. When you text someone this link through iMessage, the preview will reflect your input content.
         </p>
         <form id="inputForm">
           <input
@@ -105,19 +115,18 @@
           />
           <br><button type="submit">Generate article link</button>
         </form>
-        <p>
-          Example fake links to send someone:
-        </p>
+
       </div>
 
       <div class="output" id="outputDisplay" hidden>
         <div class="link-box" id="linkBox">
-          <label for="shareLink">Shareable Link:</label>
+          <label for="shareLink">Here is your link:</label>
           <input type="text" id="shareLink" readonly />
           <button class="copy-btn" id="copyButton">Copy Link</button>
         </div>
+        <a href="https://from-samad.glitch.me/">Return home to make another link!</a>
       </div>
-      
+
     </div>
 
     <script>
@@ -207,7 +216,7 @@
 
 
         // Generate shareable link with query parameter
-        const shareableLink = `https://ellie-dailies.glitch.me/${uniqueID}`;
+        const shareableLink = `https://yaledailynews.glitch.me/${uniqueID}`;
         document.getElementById("shareLink").value = shareableLink;
         
         document.getElementById("copyButton").addEventListener("click", () => {
@@ -216,4 +225,4 @@
       });
     </script>
   </body>
-  </html>
+</html>
