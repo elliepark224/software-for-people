@@ -10,7 +10,7 @@
         margin: 0;
         padding: 20px;
         background-color: blue;
-        color: white
+        color: white;
       }
       [hidden] {
         display: none;
@@ -94,7 +94,7 @@
       <div id="formContainer">
         <h1>TIME TO PRANK SOMEONE!</h1>
         <img src="sketch2.gif">
-        <h2>Create a fake article!</h2>
+        <h2>Create a fake article preview</h2>
         <p>
           Enter a headline and image below to generate a link. When you text someone this link through iMessage, the preview will reflect your input content.
         </p>
@@ -113,8 +113,12 @@
             placeholder="Enter silly image URL here"
             required
           />
-          <br><button type="submit">Generate article link</button>
+          <br><button type="submit">Generate link!</button>
         </form>
+        <span id="moreText" style="display:none;">
+          This is the hidden text that will be revealed when the "Read More" button is clicked.
+        </span>
+        <br><button id="readMoreBtn" onclick="toggleText()">Read More</button>
 
       </div>
 
@@ -223,6 +227,21 @@
           copyToClipboard(shareableLink);
         });
       });
+
+      function toggleText() {
+    var moreText = document.getElementById("moreText");
+    var btn = document.getElementById("readMoreBtn");
+
+    // Toggle the visibility of the extra text
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btn.innerHTML = "Hide Walkthrough";  // Change the button text to "Hide"
+    } else {
+        moreText.style.display = "none";
+        btn.innerHTML = "Show Walkthrough";  // Change the button text back to "Show"
+    }
+  }
+
     </script>
   </body>
 </html>
