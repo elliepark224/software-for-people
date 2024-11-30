@@ -9,8 +9,8 @@
         font-family: "Arial", sans-serif;
         margin: 0;
         padding: 20px;
-        background-color: white;
-        color: green;
+        background-color: rgb(174, 15, 15);
+        color: white;
       }
       [hidden] {
         display: none;
@@ -96,7 +96,7 @@
     <div class="container">
       <div id="formContainer">
         <h1>TIME TO PRANK SOMEONE!</h1>
-        <img src="sketch2.gif">
+        <img src="cover.gif">
         <h2>Create a fake article preview</h2>
         <p>
           Enter a headline and image below to generate a link. When you text someone this link through iMessage, the preview will reflect your input content.
@@ -121,9 +121,9 @@
         <span id="moreText" style="display:none;">
           <h2>Step by Step Walkthrough</h2>
           <ol>
-            <li><b>Come up with prank idea</b> (e.g. JoJo Siwa is coming to campus for a seminar.)<br><img src="thinking.gif"></li>
-            <li><b>Enter a headline and relevant image address</b>(e.g. Yale is next on JoJo Siwa's Ivy tour)<br><img src="enter.gif"></li>
-            <li><b>Click generate, copy link, and send to a friend</b></li>
+            <li><b>Come up with prank idea</b> (e.g. telling your friend that JoJo Siwa is coming to campus for a seminar.)<br><img src="thinking.gif"></li>
+            <li><b>Enter the headline you want and the image url of an apprropriate photo</b> (e.g. Yale is next on JoJo Siwa's Ivy tour)<br><img src="enter.gif"></li>
+            <li><b>Click generate, hit copy link, and text the link to a friend!</b><br><img src="send.gif"></li>
           </ol>
         </span>
         <br><button id="readMoreBtn" onclick="toggleText()">Show Walkthrough</button>
@@ -135,8 +135,10 @@
           <label for="shareLink">Here is your link:</label>
           <input type="text" id="shareLink" readonly />
           <button class="copy-btn" id="copyButton">Copy Link</button>
+          <p>Share this with the desired prank recipient and get excited for their reaction!</p>
+          <img src="waiting.gif">
         </div>
-        <a href="https://from-samad.glitch.me/">Return home to make another link!</a>
+        <a href="https://elliepark224.github.io/software-for-people/project-2/form.html">Return home to make another link!</a>
       </div>
 
     </div>
