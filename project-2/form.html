@@ -85,10 +85,26 @@
       height: auto;
       display: block;
       object-fit: contain;
+      margin: 0 auto;
       }
       #moreText {
         text-align: left;
       }
+
+    @media (min-width: 768px) {
+      img {
+        width: 70%; /* Adjust based on design needs */
+        max-width: 600px; /* Caps the maximum size */
+    }
+}
+
+    @media (min-width: 1024px) {
+    img {
+        width: 50%; /* Smaller width for larger screens */
+        max-width: 800px; /* Adjust max size for large screens */
+    }
+}
+
       
     </style>
   </head>
@@ -123,7 +139,7 @@
           <ol>
             <li><b>Come up with a prank idea</b> (e.g. telling your friend that JoJo Siwa is coming to campus for a seminar.)<br><img src="thinking.gif"></li>
             <li><b>Enter the headline you want and the image url of an appropriate photo</b> (e.g. "Yale is next on JoJo Siwa's Ivy tour" and a photo of JoJo at Brown)<br><img src="enter.gif"></li>
-            <li><b>Click generate, hit copy link, and text the link to a friend! The preview in iMessage will reflect your input content. When the link is opened, the screen will display a "You got pranked!" message.</b><br><img src="send.gif"></li>
+            <li><b>Click generate, hit copy link, and text the link to a friend!</b> The preview in iMessage will reflect your input content. When the link is opened, the screen will display a "You got pranked!" message.<br><img src="send.gif"></li>
           </ol>
         </span>
         <br><button id="readMoreBtn" onclick="toggleText()">Show Walkthrough</button>
