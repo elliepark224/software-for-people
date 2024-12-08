@@ -1,4 +1,4 @@
-var AppScriptUrl = 'https://script.google.com/macros/s/AKfycbxxiMS56WJefXJI5dUwDkj1YAdaswZdN7kdL3hwYIYkRv2vwLRP-zV0q43gv5L0A4OD/exec';
+var AppScriptUrl = 'https://script.google.com/macros/s/AKfycbzxRZhGl1yi-furogsSUpe2yfLP-lHfQXlR-Hb8R47J0iqXQkkjlMQBvNXAli_TOuwq/exec';
 
 function getData(url) {
   var xhr = new XMLHttpRequest();
