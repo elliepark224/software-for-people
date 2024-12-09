@@ -9,13 +9,20 @@
   <!-- This demo is based on the following code: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server, as well as tutorials:
   https://www.youtube.com/watch?v=15y1D1mGKdE. I also used chatGPT to modify the code. -->
 </head>
+<style>
+  body{
+  background-color: pink;
+  color: green;
+  font-family: 'Courier New', Courier, monospace;
+  }
+</style>
 
 <body>
   <div>This website posts and displays data from this <a href="https://docs.google.com/spreadsheets/d/1vElq_tenGegYs9bv7q9KTLQbR6Yaj2DFcEsWLeZOh2Y/edit?usp=sharing">Google Sheet</a>.</div>
 
   <div><a href="form.html">Submit data here</a></div>
 
-  <h1>Display data from spreadsheet</h1>
+  <h1>Friends' favorite Wicked characters!</h1>
   <ol id="sheetData"></ol>
 
   <script src="get-data.js"></script>
