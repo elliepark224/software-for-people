@@ -13,8 +13,26 @@
   body{
   background-color: pink;
   color: green;
-  font-family: 'Courier New', Courier, monospace;
   }
+
+  div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid rgb(2, 66, 2);
+    border-radius: 5px;
+    background: green;
+    color: white;
+  }
+
+  .hover-green {
+    width: 500px; /* Adjust as needed */
+    transition: filter 0.3s ease; /* Smooth transition */
+  }
+
+  .hover-green:hover {
+    filter: hue-rotate(90deg);
+  }
+
 </style>
 
 <body>
@@ -23,9 +41,12 @@
   <div><a href="form.html">Submit data here</a></div>
 
   <h1>Friends' favorite Wicked characters!</h1>
+  <img src="https://i.ytimg.com/vi/5omDWGdDmJ8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA_kQQVPhTST1bcMq8rxa5E-cwa0Q" alt="Wicked movie thumbnail" class="hover-green">
   <ol id="sheetData"></ol>
 
-  <script src="get-data.js"></script>
+  <script src="get-data.js">
+  </script>
+
 <!-- END -->
 
 </body>
